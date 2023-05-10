@@ -6,6 +6,10 @@
     font-style: normal;
 }
 
+body {
+    margin-top: -30px;
+}
+
 li {
     list-style: none;
 }
@@ -66,9 +70,10 @@ h4 {
 
 .header {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
-    margin: 0 120px;
+    margin-bottom: 100px;
+    /* margin-top: unset !important; */
 }
 
 
@@ -127,6 +132,10 @@ h4 {
     right: -160px;
 }
 
+.menuChildProduct {
+    display: none;
+}
+
 .dropdownChildBtn {
     position: relative;
 }
@@ -139,13 +148,14 @@ h4 {
 .category {
      display: flex;
      justify-content: center;
-     margin: 0 120px;
+     margin: 0 100px;
      height: 460px;
 }
 
 .categoryLeft {
     width: 285px;
     margin-right: 8px;
+    position: relative;
 }
 
 .categoryBtn {
@@ -155,6 +165,7 @@ h4 {
     font-size: 20px;
     line-height: 23px;
 
+    cursor: pointer;
     padding: 18px 12px;
     border: 1px solid #196DF7; 
     border-bottom: none; 
@@ -162,6 +173,7 @@ h4 {
 }
 .categoryBtn.responsive {
     display: none;
+    cursor: pointer;
 }
 .categoryBtn__text {
     margin-left: 17px;
@@ -172,6 +184,8 @@ h4 {
     width: 285px;
     border-radius: 0;
     height: 410px;
+    position: absolute;
+    z-index: 90;
 }
 
 .categoryList li {
@@ -219,6 +233,7 @@ h4 {
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
     background-color: #FFFFFF;
     margin-bottom: 18px;
+    cursor: pointer;
 }
 
 
@@ -226,7 +241,7 @@ h4 {
     display: flex;
     align-items: center;
     flex-direction: column;
-    justify-content: center;
+    justify-content: end;
     padding: 0 3.5rem;
     
     font-weight: 700;
@@ -244,7 +259,7 @@ h4 {
 /* intro */
 .intro {
     display: flex;
-    margin: 0 120px;
+    margin: 0 100px;
     margin-top: 51px;
     gap: 22px;
     height:504px;
@@ -341,6 +356,7 @@ h4 {
 .product-menu-list,.service-menu-list {
     display: flex;
     justify-content: center;
+    text-transform: capitalize;
 }
 
 .product-menu-item,.service-menu-item {
@@ -360,6 +376,12 @@ h4 {
 }
 
 
+.products {
+    margin-left: 100px;
+    margin-right: 100px;
+
+}
+
 .product-list {
     display: flex;
     justify-content: center;
@@ -370,7 +392,7 @@ h4 {
 .product-card {
     /* width: 292px;. */
     /* height: 350px; */
-
+    cursor: pointer;
     background: #FFFFFF;
     box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
     border-radius: 10px; 
@@ -381,6 +403,9 @@ h4 {
     border-radius: 5px 5px 0px 0px;
 }
 
+.service-card {
+    cursor: pointer;
+}
 .product-card__infor,.service-card__infor {
     flex: 1;
     display: block;
@@ -432,6 +457,10 @@ h4 {
 
 
 /* service */
+.service {
+    margin-left: 100px;
+    margin-right: 100px;
+}
 .service-list {
     display: flex;
     justify-content: center;
@@ -500,7 +529,7 @@ h4 {
 
 /* news and contac */
 .newsAndContact {
-    margin: 50px 120px;
+    margin: 50px 100px;
     flex-wrap: wrap;
 }
 
@@ -524,7 +553,7 @@ h4 {
     /* flex: 1; */
     position: relative;
     height: 425px;
-    
+    padding: 0;
 }
 .newsInfor {
     position: absolute;
@@ -626,11 +655,12 @@ h4 {
 
 .contact-input {
     width: 100%;
-    height: 60px;
+    height: 70px;
     border: none;
     background: rgba(140, 205, 255, 0.1);
     padding: 20px 16px;
     overflow:   hidden;
+    outline-color: rgba(6, 94, 161, 0.1);
 
     color: #888888;
 }
@@ -655,7 +685,7 @@ h4 {
 
 /* feedback */
 .feedback {
-    /* margin: 0 120px; */
+    margin: 0 100px;
 }
 
 .feedback-line {
@@ -828,7 +858,7 @@ h4 {
 }
 
 .footerEnd {
-    margin: 0 120px;
+    margin: 0 100px;
 }
 
 
@@ -837,9 +867,9 @@ h4 {
 /* desktop */
 @media only screen and (max-width: 1400px){
     
-    .newsAndContact,.feedback,.category,.header,.intro {
-        margin-left: 20px;
-        margin-right: 20px;
+    .newsAndContact,.feedback,.category,.header,.intro,.footerEnd,.products,.service {
+        margin-left: 30px;
+        margin-right: 30px;
     }
 
    
@@ -853,8 +883,13 @@ h4 {
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1040px){  
-    .newsAndContact,.feedback,.category,.header,.intro,.footerEnd {
-        margin: 0 20px;
+    .newsAndContact,.feedback,.category,.header,.intro,.footerEnd,.products,.service {
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+
+    .product-list{
+        justify-content: space-between;
     }
 
     .headMenu {
@@ -916,8 +951,12 @@ h4 {
 }
 /* tablet */
 @media only screen and (min-width: 600px) and (max-width: 800px){
-    .newsAndContact,.feedback,.category,.header,.intro {
+    .newsAndContact,.feedback,.category,.header,.intro,.footerEnd,.products,.service  {
         margin: 30px 20px;
+    }
+
+    .newsContent,.feedback-list  {
+        justify-content: space-between;
     }
 
     .categoryBtn.responsive {
@@ -949,20 +988,20 @@ h4 {
     }
     
     .headBtnResponsive {
-        font-size: 40px;
-        
+        font-size: 30px;    
+        cursor: pointer;
     }
-    .headSearch img{
-        width: 100%;
-        height: 100%;
-    }
+   
     .headSearch {
-        width: 30px;
-        height: 32px;
+        width: 25px;
+        height: 25px;
         margin-top: 4px;
     }
     
-
+ .headSearch img{
+        width: 100%;
+        height: 100%;
+    }
     .criteriaItem {
         padding: 10px 1rem;
     }
@@ -1091,6 +1130,9 @@ h4 {
     }
     .criteriaItem {
         padding: 10px 0.2rem;
+        border-left: unset !important;
+        font-size: 14px;
+
     }
 
     .headMenu {
@@ -1106,20 +1148,21 @@ h4 {
     }
     
     .headBtnResponsive {
-        font-size: 40px;
-        
+        font-size: 30px;    
+        cursor: pointer;
+    }
+   
+    .headSearch {
+        width: 25px;
+        height: 25px;
+        margin-top: 4px;
     }
     .headSearch img{
         width: 100%;
         height: 100%;
     }
-    .headSearch {
-        width: 30px;
-        height: 32px;
-        margin-top: 4px;
-    }
 
-    
+  
     .categoryBtn {
         display: none;
     }
@@ -1217,7 +1260,17 @@ h4 {
         height: auto;
     }
     .criteriaItem {
-        padding: 10px 0.2rem;
+        /* padding: 10px 0.2rem; */
+        border-left: unset !important;
+        /* width: 70px; */
+        font-size: 14px;
+        font-weight: 500;
+
+    }
+
+    .criteria__circle {
+       height: 70px;
+       width: 70px;
     }
 
     .headMenu {
@@ -1233,17 +1286,22 @@ h4 {
     }
     
     .headBtnResponsive {
-        font-size: 40px;
-        
+        font-size: 30px;    
+        cursor: pointer;
+    }
+   
+    .headSearch {
+        width: 25px;
+        height: 25px;
+        margin-top: 4px;
     }
     .headSearch img{
         width: 100%;
         height: 100%;
     }
-    .headSearch {
-        width: 30px;
-        height: 32px;
-        margin-top: 4px;
+    .headSearch img{
+        width: 100%;
+        height: 100%;
     }
 
     
@@ -1255,7 +1313,7 @@ h4 {
         display: none;
     }
     .categoryRight {
-        width: 90%;
+        width: 99%;
     }
     .product-menu-item,
     .service-menu-item {
