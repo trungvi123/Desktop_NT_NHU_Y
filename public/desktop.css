@@ -6,9 +6,7 @@
     font-style: normal;
 }
 
-body {
-    margin-top: -30px;
-}
+
 
 li {
     list-style: none;
@@ -73,7 +71,7 @@ h4 {
     justify-content: space-evenly;
     align-items: center;
     margin-bottom: 100px;
-    /* margin-top: unset !important; */
+    margin-top: unset !important;
 }
 
 
@@ -159,8 +157,6 @@ h4 {
 }
 
 .categoryBtn {
-    color:#FFFFFF ;
-    
     font-weight: 700;
     font-size: 20px;
     line-height: 23px;
@@ -397,14 +393,17 @@ h4 {
     box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
     border-radius: 10px; 
     padding: 6px;
+    opacity: 0;
 }
 
 .product-card__img {
     border-radius: 5px 5px 0px 0px;
 }
 
+
 .service-card {
     cursor: pointer;
+    opacity: 0;
 }
 .product-card__infor,.service-card__infor {
     flex: 1;
@@ -590,11 +589,11 @@ h4 {
 
 .newsInfor__link {
     position: absolute;
-    bottom: 5px;
+    bottom: -2px;
     right: 12px;
     color: #FF6600;
     font-weight: 700;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 24px;
 }
 
@@ -610,6 +609,9 @@ h4 {
     gap: 10px;
     display: flex;
     flex-direction: column;
+    height: 425px;
+
+    overflow-y: scroll;
 }
 
 
@@ -700,6 +702,7 @@ h4 {
     justify-content: center;
     margin-top: 10px;
     gap: 21px;
+    margin-bottom: 30px;
 }
 
 .feedback-item {
@@ -708,7 +711,7 @@ h4 {
     justify-content: center;
     align-items: center;
     position: relative;
-
+    cursor: pointer;
     /* width: 386px; */
     margin-top: 145px;
 
@@ -983,13 +986,10 @@ h4 {
         justify-content: space-between;
     }
 
-    .headBtnResponsive {
-        display: block;
-    }
     
-    .headBtnResponsive {
+    .headBtnResponsive,.searchIcon {
         font-size: 30px;    
-        cursor: pointer;
+        cursor: pointer;display: block;
     }
    
     .headSearch {
@@ -1106,6 +1106,16 @@ h4 {
 
 
 @media only screen and (max-width: 600px){
+    .introLeft__text {
+        display: block;
+        display: -webkit-box;
+        -webkit-line-clamp: 10; /* số dòng hiển thị */
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+
+    }
+
     .categoryBtn {
         display: none;
     }
@@ -1143,13 +1153,10 @@ h4 {
         justify-content: space-between;
     }
 
-    .headBtnResponsive {
-        display: block;
-    }
-    
-    .headBtnResponsive {
+  
+    .headBtnResponsive,.searchIcon {
         font-size: 30px;    
-        cursor: pointer;
+        cursor: pointer;display: block;
     }
    
     .headSearch {
@@ -1263,9 +1270,12 @@ h4 {
         /* padding: 10px 0.2rem; */
         border-left: unset !important;
         /* width: 70px; */
-        font-size: 14px;
+        /* font-size: 8px; */
         font-weight: 500;
 
+    }
+    .criteriaItem span {
+        display: none;
     }
 
     .criteria__circle {
@@ -1281,14 +1291,12 @@ h4 {
         justify-content: space-between;
     }
 
-    .headBtnResponsive {
+    .headBtnResponsive,.searchIcon {
         display: block;
-    }
-    
-    .headBtnResponsive {
         font-size: 30px;    
         cursor: pointer;
     }
+    
    
     .headSearch {
         width: 25px;
@@ -1340,7 +1348,7 @@ h4 {
 
     .supportPlace{
         display: block;
-        height: 650px;
+        height: 400px;
     }
     .news,.contact {
         flex: unset;
@@ -1382,3 +1390,94 @@ h4 {
 .carousel {
     flex: 1 !important;
 }
+
+
+
+
+
+
+
+/* animation  */
+
+.rotate {
+    animation: rotate 2s ease-in forwards;
+}
+
+
+.transformLR {
+    animation: transformLR 1.25s ease-in forwards;
+}
+
+.transformRL {
+    animation: transformRL 1.25s ease-in forwards;
+}
+.scale {
+    animation: scale 1.25s ease-in forwards;
+}
+
+@keyframes rotate {
+    from{
+        transform: rotate(-20deg);
+        opacity: 0;
+    }to {
+        transform: rotate(0deg);
+        opacity: 1;
+    }
+}
+
+@keyframes scale {
+    from{
+        transform: scale(0.5);
+        opacity: 0;
+    }to {
+        transform: scale(0.7);
+        opacity: 1;
+    }
+}
+
+
+@keyframes transformLR {
+    from{
+        transform: translateX(-100%);
+    
+    }to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes transformRL {
+    from{
+        transform: translateX(100%);
+        
+    }to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes transformLRFull {
+    0%{
+        transform: translateX(-100%);
+    }
+    50%{
+        transform: translateX(0%)
+    }
+    66% {
+        transform: translateX(100%);
+    }99%{
+        transform: translateX(0);
+
+    }
+}
+
+
+
+.transformLRFull {
+    animation: transformLRFull 10s linear;
+}
+.feedback {
+    overflow: hidden;
+}
+
+

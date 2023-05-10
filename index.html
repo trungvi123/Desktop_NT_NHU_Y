@@ -153,8 +153,6 @@
         <div class="header">
             <div class="headBtnResponsive"><i class="fa-solid fa-bars"></i></div>
 
-
-
             <div class="headLeft">
                 <img src="./asset/img/logo/logo-web-LHG 1.png" alt="ảnh">
             </div>
@@ -169,14 +167,16 @@
                 </ul>
 
                 <div class="headSearch mb-2">
-                    <img src="./asset/img/icon/Search.png" alt="ảnh">
+                    <!-- <img src="./asset/img/icon/Search.png" alt="ảnh"> -->
+                    <i style="font-size: 20px;    
+                    cursor: pointer;" class="fa-solid fa-magnifying-glass searchIcon"></i>
                 </div>
             </nav>
         </div>
 
         <div class="category">
             <div class="categoryLeft">
-                <div class="categoryBtn"><img src="./asset/img/icon/Bar.png" alt="ảnh"><span
+                <div class="categoryBtn"><i class="fa-solid fa-bars"></i><span
                         class="categoryBtn__text">DANH MỤC</span></div>
                 <div class="categoryBtn categoryBtn2 responsive"><img src="./asset/img/icon/Bar.png" alt="ảnh"></div>
                 <ul class="categoryList">
@@ -251,6 +251,7 @@
             <div class="criteriaItem col-sm-6 col-3 col-md-3">
                 <div class="criteria__circle" data-toggle="tooltip" data-placement="top" title="ĐỘI NGŨ CHUYÊN NGHIỆP">
                     <img src="./asset/img/icon/Staff.png" alt="ảnh">
+                    
                 </div>
                 <span>ĐỘI NGŨ CHUYÊN NGHIỆP</span>
             </div>
@@ -279,6 +280,7 @@
             </div>
             <div class="introRight p-0 col-md-12 col-lg-5 col-sm-12">
                 <img class="imgIntro" src="./asset/img/product/productIntro.jpg" alt="ảnh">
+                
             </div>
 
         </section>
@@ -304,6 +306,7 @@
             </div>
 
             <div class="product-list row">
+       
                 <div class="product-card col-sm-5 col-md-5 col-lg-3">
                     <div class="product-card__img">
                         <img class="w-100 h-100" src="./asset/img/product/product1.png" alt="ảnh">
@@ -496,7 +499,38 @@
                                 <a class="newsInfor__link" href="">Xem thêm</a>
                             </div>
                         </div>
+                        <div class="newsContentRight-item position-relative">
+                            <img class="mr-2" style="height: 100%;width: 120px;" src="./asset/img/product/product6.png"
+                                alt="ảnh">
 
+                            <div class="newsContentRight-infor ">
+                                <h6>
+                                    Trang trí nhà với hoa mẫu đơn hợp phong thủy.
+                                    Trang trí nhà với hoa mẫu đơn hợp phong thủy.
+                                    Trang trí nhà với hoa mẫu đơn hợp phong thủy.
+                                </h6>
+                                <p>
+                                    Hoa trong nhà làm tâm trạng chúng ta vui vẻ, thoải mái hơn
+                                    Hoa trong nhà làm tâm trạng chúng ta vui vẻ, thoải mái hơn
+                                    Hoa trong nhà làm tâm trạng chúng ta vui vẻ, thoải mái hơn
+                                </p>
+                                <a class="newsInfor__link" href="">Xem thêm</a>
+                            </div>
+                        </div>
+                        <div class="newsContentRight-item position-relative">
+                            <img class="mr-2" style="height: 100%;width: 120px;" src="./asset/img/product/product6.png"
+                                alt="ảnh">
+
+                            <div class="newsContentRight-infor ">
+                                <h6>
+                                    Trang trí nhà với hoa mẫu đơn hợp phong thủy.
+                                </h6>
+                                <p>
+                                    Hoa trong nhà làm tâm trạng chúng ta vui vẻ, thoải mái hơn
+                                </p>
+                                <a class="newsInfor__link" href="">Xem thêm</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -527,7 +561,7 @@
             </div>
 
             <div class="feedback-list row">
-                <div class="feedback-item col-md-5 col-lg-3 col-sm-5 ">
+                <div class="feedback-item  col-md-5 col-lg-3 col-sm-5 ">
                     <div class="feedback-circle">
                         <img src="./asset/img/product/person.png" alt="ảnh">
                     </div>
@@ -687,55 +721,8 @@
             </div>
         </div>
     </div>
-    <script>
-        var nav_responsive = document.querySelector('.nav-responsive')
-        var content_nav = document.querySelector('.content-nav')
-        var menuChildProductBtn = document.querySelector('.menuChildProductBtn')
-        var menuChildProduct = document.querySelector('.menuChildProduct')
-        var categoryBtn = document.querySelector('.categoryBtn')
-        var categoryList = document.querySelector('.categoryList')
-
-
-        document.querySelector('.headBtnResponsive').onclick = function () {
-            nav_responsive.classList.toggle('showNav')
-            content_nav.classList.toggle('showNav')
-        }
-
-
-        nav_responsive.onclick = () => {
-            nav_responsive.classList.toggle('showNav')
-            content_nav.classList.toggle('showNav')
-        }
-
-        menuChildProductBtn.onclick = () => {
-            menuChildProduct.classList.toggle('showCategory')
-        }
-
-        content_nav.onclick = (event) => {
-            event.stopPropagation()
-        }
-
-        $(document).ready(function () {
-            $('[data-toggle="tooltip"]').tooltip();
-        });
-
-        categoryBtn.onclick = () => {
-            categoryList.classList.toggle('hideCategory')
-        }
-
-        document.querySelector('.categoryBtn2').onclick = () => {
-            categoryList.classList.toggle('hideCategory')
-        }
-
-        if (document.body.offsetWidth < 1260) {
-            categoryList.classList.add('hideCategory')
-        }
-        window.onresize = () => {
-            if (document.body.offsetWidth < 1260) {
-                categoryList.classList.add('hideCategory')
-            }
-        }
-
+    <script src="./public/desktop.js">
+        
     </script>
 </body>
 
