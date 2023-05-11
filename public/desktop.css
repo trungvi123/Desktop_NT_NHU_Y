@@ -58,6 +58,24 @@ h4 {
     height: 350px;
     display: none;
 }
+
+.circle-up {
+    bottom: 0;
+    padding: 10px;
+    position: fixed;
+    z-index: 2;
+    right: 0;
+    font-size: 3.5rem;
+    color: #9C9C9C;
+    cursor: pointer;
+    opacity: 0;
+}
+
+.circle-up:hover {
+    color: #196DF7;
+    opacity: 0.8;
+}
+
 /* class xai nhieu */
 
 
@@ -393,7 +411,6 @@ h4 {
     box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
     border-radius: 10px; 
     padding: 6px;
-    opacity: 0;
 }
 
 .product-card__img {
@@ -403,7 +420,6 @@ h4 {
 
 .service-card {
     cursor: pointer;
-    opacity: 0;
 }
 .product-card__infor,.service-card__infor {
     flex: 1;
@@ -1315,7 +1331,6 @@ h4 {
     
     .categoryBtn {
         display: none;
-      
     }
 
     .categoryBtn.responsive {
@@ -1393,6 +1408,13 @@ h4 {
 }
 
 
+.tab-content>.active {
+    display: flex;
+}
+
+.nav-link.active {
+    color: #2F8DFF;
+}
 
 
 
